@@ -1,0 +1,12 @@
+#!/bin/bash -x
+####script to create file that contains the existing users
+###########
+
+
+echo "Enter file name"
+read name
+touch $name
+cut /etc/passwd -d : -f 1 > $name
+chmod +x $name
+echo "file created with the name you wanted"
+echo "        "
