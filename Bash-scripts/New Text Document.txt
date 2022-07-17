@@ -1,0 +1,74 @@
+  #!/bin/bash
+    echo "Creating directory categories"
+
+    function make_folder 
+    {
+        cd -; cd content; sudo mkdir ./$1
+    }
+
+    make_folder "images"
+    make_folder "music"
+    make_folder "videos"
+    
+
+    echo "Directories have been made"; cd -
+    exit
+
+    ext="${filename##*.}" 
+    find ./random -name | 
+                         
+
+    if ext == ["jpg"; "png"] 
+         then
+           mv /home/  /home/images
+
+    elif ext == [".mp3"; ".flac"] 
+         then
+           mv /home/  /home/music
+    elif ext == [".avi"; ".mov"] 
+         then
+           mv /home/  /home/videos
+    elif ext == [".log";]
+         then
+           rm /home/
+    else                         
+           echo "other files not changed"
+    fi
+
+=========================================================================
+
+mkdir music, images, videos
+for file in *.mp3; do 
+mv $file music
+done
+for file in *.flac; do 
+mv $file music
+done
+for file in *.png; do 
+mv $file images
+done
+for file in *.jpg; do 
+mv $file images
+done
+for file in *.mov; do 
+mv $file videos
+done
+for file in *.avi; do 
+mv $file videos
+done
+for file in *.log; do 
+rm $file 
+done
+======================================
+read x
+read y
+echo "SUM(abs($x)+abs($y))=" "$(((x<0?-x:x)+(y<0?-y:y)))"
+========================================
+#!/bin/bash
+echo "Enter first Number"
+read x
+echo "Enter second Number"
+read y
+echo "Enter third Number"
+read z
+echo "$((${x#-} + ${y#-} + ${z#-}))"
